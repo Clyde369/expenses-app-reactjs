@@ -2,10 +2,27 @@ import ExpenseItem from "./components/ExpenseItem";
 
 
 function App() {
+  //store expenses data in a array block
   const expenses = [
-  { title: 'Car insurance', amount: 300, date: new Date(2020,7,7)},
-  { title: 'Toilet paper', amount: 300, date: new Date(2020,7,7)},
-  { title: 'Sugar', amount: 300, date: new Date(2020,7,7)}
+    {
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 5, 12),
+    },
   ];
     
   
@@ -27,6 +44,11 @@ function App() {
         title={expenses[2].title}
         amount={expenses[2].amount}
         date={expenses[2].date}
+      />
+      <ExpenseItem 
+        title={expenses[3].title}
+        amount={expenses[3].amount}
+        date={expenses[3].date}
       />
     </div>
   );
