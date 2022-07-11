@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from './components/NewExpense/NewExpense'
 
 const App = () => {
   //store expenses data in a array block
@@ -29,6 +30,7 @@ const App = () => {
     <div>
       <h2>Let's get started!</h2>
       <p>this is a paragraph</p>
+      <NewExpense />
         <Expenses
           items={expenses}
         />
