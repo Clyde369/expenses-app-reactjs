@@ -1,8 +1,6 @@
 import Expenses from "./components/Expenses/Expenses";
 
-
-
-function App() {
+const App = () => {
   //store expenses data in a array block
   const expenses = [
     {
