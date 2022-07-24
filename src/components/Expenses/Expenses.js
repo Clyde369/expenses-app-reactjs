@@ -15,6 +15,18 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
   })
 
+let expensesContent = <p className="noFilteredDataFound">No data found D:</p>
+if(filteredExpenses.length > 0) {
+  expensesContent = filteredExpenses.length > 0 && ( 
+    filteredExpenses.map((expense) => <ExpenseItem
+      key={expense.id}
+      title={expense.title}
+      amount={expense.amount}
+      date={expense.date}
+    /> )
+)
+}
+
   return (
 
     <div>
@@ -23,20 +35,10 @@ const Expenses = (props) => {
         {/* mapping the data from the expenseItems with the title, amount and date information */}
 
       {/* conditional the main curly brackets are removed so that the data can be in one string of brackets*/}
+      {filteredExpenses.length === 0 && {expensesContent} }
         {
-          filteredExpenses.length === 0 ? (
-            <p className="noFilteredDataFound">No data found D:</p>
-          ) : (
-              filteredExpenses.map((expense) => <ExpenseItem
-                key={expense.id}
-                title={expense.title}
-                amount={expense.amount}
-                date={expense.date}
-              /> )
-          )
+          expensesContent
         }
-
-
       </Card>
     </div>
   );
