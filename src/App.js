@@ -35,8 +35,9 @@ const App = () => {
 
   return (
     <div>
-      <h2>Let's get started!</h2>
-      <p>this is a paragraph</p>
+      {/* i wil soon add bootstrap styling so that its a bit more simple to style (styling is not that important rn) */}
+      <h2>Expense Tracker</h2>
+      <p>Track you expenses</p>
       <NewExpense onAddExpense={addExpenseHandler} />
         <Expenses
           items={expenses}
