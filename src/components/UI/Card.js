@@ -6,10 +6,11 @@ const Card = (props) => {
    //the classes function will allow the card styles and any other className that you have defined differently for the other components 
    const classes = 'card '+ props.className
   return (
-    <div className={classes}>
-      {/* props.children allow you to make styling wrapper props for your components, that way you dont have to use the same styles repetitively */}
-      {props.children}
-    </div>
+<div class="card">
+  <div class="card-body">
+    {props.children}
+  </div>
+</div>
   )
 }
 

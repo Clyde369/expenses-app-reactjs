@@ -6,17 +6,22 @@ import Card from '../UI/Card'
 const ExpenseItem = (props) => {
    //this a special value to update state in my project
   return (
-  <li>
-     <Card className="expense-item">
-            <ExpenseDate
-               date={props.date}
-            />
-            <div className="expense-item__description">
+  <div class="card">
+     <Card>
+            
+            <div class="card-header">
                <h2>{props.title}</h2>
-               <p className="expense-item__price">R{props.amount}</p>
+            </div>
+            <div>
+            <p class="card-body">R{props.amount}</p>
+            </div>
+            <div class="card-footer text-muted text-center">
+               <ExpenseDate
+                  date={props.date}
+               />
             </div>
      </Card>
-  </li>
+  </div>
   );
 };
 

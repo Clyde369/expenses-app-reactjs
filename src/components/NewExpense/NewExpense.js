@@ -23,12 +23,21 @@ const [isCollapse, setIsCollapse] = useState(false)
   }
 
   return (
-    <div className="new-expense">
-      {!isEditing && <button onClick={startEditingHandler}>Add new Expense</button>}
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Expand/Collapse Expense Adder
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+      <div class="accordion-body">
+      {!isEditing && <button type="button" class="btn btn-dark" onClick={startEditingHandler}>Add new Expense</button>}
       {isEditing && <ExpenseForm onSaveExpenseData={onSaveExpenseData} />}
-      {isEditing && !isCollapse && <ExpenseForm onSaveExpenseData={onSaveExpenseData}/>}
-      
+      </div>
     </div>
+  </div>
+</div>
   )
 }
 
