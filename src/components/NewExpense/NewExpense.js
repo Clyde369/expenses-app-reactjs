@@ -13,13 +13,14 @@ const [isCollapse, setIsCollapse] = useState(false)
 
     }
     props.onAddExpense(expenseData)
+    setIsEditing(false)
   }
 
   const startEditingHandler = () => {
     setIsEditing(true)
   }
   const collapseEditingHandler = () => {
-    setIsCollapse(true)
+    setIsCollapse(false)
   }
 
   return (
@@ -33,7 +34,7 @@ const [isCollapse, setIsCollapse] = useState(false)
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
       <div class="accordion-body">
       {!isEditing && <button type="button" class="btn btn-dark" onClick={startEditingHandler}>Add new Expense</button>}
-      {isEditing && <ExpenseForm onSaveExpenseData={onSaveExpenseData} />}
+      {isEditing && <ExpenseForm onCancel={collapseEditingHandler} onSaveExpenseData={onSaveExpenseData} />}
       </div>
     </div>
   </div>

@@ -91,6 +91,8 @@ const ExpenseForm = (props) => {
       setEnterDate("")
    }
 
+   
+
   return (
     <div>
       <form onSubmit={submitHandler}>
@@ -113,6 +115,7 @@ const ExpenseForm = (props) => {
             </div>
          </div>
          <div className="new-expense__actions">
+            <button class='btn btn-danger' onClick={props.onCancel}>Close</button>
             <button type='submit'class='btn btn-dark' >Add Expense</button>
          </div>
       </form>
