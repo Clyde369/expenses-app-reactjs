@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from './components/NewExpense/NewExpense'
 
+import './index.css'
+
 const dumExpense = [
   {
     id: 'e1',
@@ -36,8 +38,10 @@ const App = () => {
   return (
     <div>
       {/* i wil soon add bootstrap styling so that its a bit more simple to style (styling is not that important rn) */}
-      <h2>Expense Tracker</h2>
-      <p>Track you expenses</p>
+      <div className="heading">
+        <h1>Expense Tracker</h1>
+        <p>Track you expenses, Like a Boss</p>
+      </div>
       <NewExpense onAddExpense={addExpenseHandler} />
         <Expenses
           items={expenses}

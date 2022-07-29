@@ -91,8 +91,6 @@ const ExpenseForm = (props) => {
       setEnterDate("")
    }
 
-   
-
   return (
     <div>
       <form onSubmit={submitHandler}>
